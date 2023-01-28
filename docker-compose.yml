@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./cmd/server/Dockerfile
+    ports:
+      - "3333:3333"
+    environment:
+      - APP_ENV=local
