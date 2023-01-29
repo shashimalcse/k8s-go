@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-go
+spec:
+  selector:
+    matchLabels:
+      app: k8s-go
+  template:
+    metadata:
+      labels:
+        app: k8s-go
+    spec:
+      containers:
+      - name: k8s-go
+        image: ghcr.io/shashimalcse/k8s-go
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3333
